@@ -1,38 +1,129 @@
-.App {
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
   text-align: center;
+  margin-bottom: 50px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.posts {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.post {
+  max-height: 90vh;
+  display: grid;
+  grid-template-columns: 60px auto;
+  grid-gap: 15px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.post:nth-child(n + 2) {
+  margin-top: 50px;
+}
+.post video {
+  width: 40vh;
+  cursor: pointer;
+}
+.post__avatar {
+  max-width: 100%;
+  border-radius: 50%;
+}
+.post__desc a {
+  text-decoration: none;
+  color: inherit;
+}
+.post__desc a:hover {
+  text-decoration: underline;
+}
+.post__author-holder a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+}
+.post__author-holder span {
+  font-size: 16px;
+}
+.post__music-title svg {
+  transform: translateY(20%);
+}
+.post__video-holder {
+  grid-column: 2;
+  position: relative;
+  display: grid;
+  align-items: flex-end;
+  grid-gap: 10px;
+  grid-template-columns: min-content auto;
+}
+.post__controlls {
+  grid-template-rows: repeat(3, min-content);
+  grid-gap: 10px;
+  width: min-content;
+  user-select: none;
+}
+.post__controll {
+  margin-top: 15px;
+}
+.post__controll-btn {
+  height: 45px;
+  width: 45px;
+  background-color: rgba(22, 24, 35, 0.06);
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  transition: background-color.3s;
+}
+.post__controll-btn:hover,
+.post__controll-btn.active {
+  background-color: rgba(22, 24, 35, 0.16);
+}
+.post__controll-number {
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.user-posts {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 700px;
+  margin: 0 auto;
+  grid-gap: 2px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-post {
+  position: relative;
+  background: #000;
+  display: flex;
+}
+.user-post video {
+  width: 100%;
+  position: relative;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.user-post video:hover {
+  opacity: 1;
+}
+.user-post__viewed {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+}
+.user-post__viewed svg {
+  vertical-align: middle;
+  margin-top: -3px;
+}
+.posts-page h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.posts-page h2 a {
+  text-decoration: none;
+  color: inherit;
 }
